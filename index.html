@@ -596,6 +596,27 @@
         font-size: 1.1rem;
       }
     }
+    /* === Christmas Scene Background (behind existing animation) === */
+.scene {
+  position: relative;
+  overflow: hidden;
+}
+
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/xmas-scene.png") center / contain no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure existing animation layers stay above the image */
+.scene > * {
+  position: relative;
+  z-index: 1;
+}
+
   </style>
 </head>
 <body>
@@ -713,6 +734,7 @@
 
       <!-- Generator -->
       <div class="generator">
+  <div class="gen-bow"></div>
         <div class="gen-body">
           <div class="gen-logo"></div>
           <div class="gen-lid"></div>
@@ -756,3 +778,4 @@
   </div>
 </body>
 </html>
+
