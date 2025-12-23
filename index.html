@@ -258,13 +258,7 @@
     .gen-interior::after {
       inset: 22% 8% 16% 48%;
     }
-    /* ✅ Disable lid animation entirely */
-.gen-lid{
-  animation: none !important;
-  transition: none !important;
-  transform: none !important;
-}
-
+  
     /* Technician + toolbox */
     .tech-group {
       position: absolute;
@@ -704,31 +698,7 @@
     drop-shadow(0 0 10px rgba(255,255,255,.22))
     drop-shadow(0 0 26px rgba(255,60,80,.55)) !important;
 }
-
-/* ✅ Kill lid animation completely (even if other rules try to override) */
-.gen-lid,
-.gen-body .gen-lid,
-.generator .gen-lid,
-.gen-lid.open,
-.gen-lid.is-open,
-.lid,
-.generator .lid{
-  animation: none !important;
-  transition: none !important;
-  transform: none !important;
-  /* ☠️ ABSOLUTE LID TERMINATION */
-.gen-lid,
-.generator .gen-lid,
-.gen-body .gen-lid {
-  animation-name: none !important;
-  animation-duration: 0s !important;
-  animation-delay: 0s !important;
-  animation-iteration-count: 0 !important;
-  animation-fill-mode: none !important;
-
-  transition: none !important;
-  transform: none !important;
-}  
+ 
   /* 🎄 Merry Christmas INSIDE the scene (top overlay) */
 .scene{ position: relative; }
 
@@ -801,6 +771,24 @@
   animation-timing-function: ease-out !important;
   animation-fill-mode: forwards !important;
   animation-iteration-count: 1 !important;
+}
+/* ✅ Kill lid animation completely (clean + correct) */
+.gen-lid,
+.gen-body .gen-lid,
+.generator .gen-lid,
+.gen-lid.open,
+.gen-lid.is-open,
+.lid,
+.generator .lid{
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 0 !important;
+  animation-fill-mode: none !important;
 }
 
   </style>
@@ -969,6 +957,7 @@
   </div>
 </body>
 </html>
+
 
 
 
