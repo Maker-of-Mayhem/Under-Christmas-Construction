@@ -596,6 +596,46 @@
         font-size: 1.1rem;
       }
     }
+    /* ============================
+   CHRISTMAS OVERLAY PATCH
+   ============================ */
+
+.scene { position: relative; overflow: hidden; }
+.generator { position: relative; }
+
+/* 🎁 Big bow */
+.gen-bow{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  width:160px;
+  height:160px;
+  transform:translateX(-50%);
+  background:url("assets/gs-bow-glitter.png") center/contain no-repeat;
+  pointer-events:none;
+  z-index: 999;
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,.22))
+    drop-shadow(0 0 26px rgba(255,60,80,.55));
+}
+
+/* 🎄 Tree */
+.energy-tree{
+  position:absolute;
+  right:-40px;
+  bottom:-12px;
+  width:340px;
+  height:440px;
+  background:url("assets/xmas-tree.png") right bottom/contain no-repeat;
+  pointer-events:none;
+  z-index: 1;
+  opacity:.98;
+  filter:
+    drop-shadow(0 0 14px rgba(255,255,255,.30))
+    drop-shadow(0 0 30px rgba(120,220,255,.35));
+  /* mix-blend-mode: screen; */
+}
+
   </style>
 </head>
 <body>
@@ -758,4 +798,5 @@
   </div>
 </body>
 </html>
+
 
