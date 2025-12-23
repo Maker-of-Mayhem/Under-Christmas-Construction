@@ -733,7 +733,19 @@
   animation: none !important;
   transition: none !important;
   transform: none !important;
-}
+  /* ☠️ ABSOLUTE LID TERMINATION */
+.gen-lid,
+.generator .gen-lid,
+.gen-body .gen-lid {
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 0 !important;
+  animation-fill-mode: none !important;
+
+  transition: none !important;
+  transform: none !important;
+}    
   </style>
 </head>
 <body>
@@ -896,6 +908,7 @@
   </div>
 </body>
 </html>
+
 
 
 
