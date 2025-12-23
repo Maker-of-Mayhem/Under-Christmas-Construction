@@ -657,6 +657,83 @@
   /* If the tree has dark edges, uncomment: */
   /* mix-blend-mode: screen; */
 }
+    /* ============================
+   CHRISTMAS OVERRIDES (FINAL)
+   Put this at the VERY BOTTOM
+   ============================ */
+
+/* Create a clean stacking context so z-index behaves predictably */
+.scene{
+  position: relative;
+  overflow: hidden;
+  isolation: isolate; /* huge help for layering */
+}
+
+/* Ensure generator + tech always sit above the tree */
+.generator,
+.tech-group{
+  position: absolute;      /* keep original placement style */
+  z-index: 20 !important;  /* above the tree */
+}
+
+/* 🎄 Tree: lock to bottom-right, behind generator, not drifting upward */
+.energy-tree{
+  position: absolute !important;
+  right: -40px !important;
+  bottom: 10px !important;         /* keeps it DOWN beside the gen */
+  width: 320px !important;
+  height: 420px !important;
+
+  background: url("assets/xmas-tree.png") center / contain no-repeat !important;
+
+  z-index: 5 !important;           /* behind gen/tech, above background */
+  pointer-events: none !important;
+  opacity: .95 !important;
+
+  /* Subtle “behind” feel */
+  transform: translateX(10px) translateY(10px) scale(0.98) !important;
+
+  filter:
+    drop-shadow(0 0 14px rgba(255,255,255,.25))
+    drop-shadow(0 0 30px rgba(120,220,255,.30)) !important;
+
+  /* If your tree image has any dark/black background, uncomment: */
+  /* mix-blend-mode: screen !important; */
+}
+
+/* 🎁 Bow: force it to the RIGHT side of the generator */
+.gen-body{ position: relative !important; } /* anchor bow to generator body */
+
+.gen-body .gen-bow{
+  position: absolute !important;
+  top: -18px !important;
+  left: 68% !important;            /* pushes it to right side */
+  width: 160px !important;
+  height: 160px !important;
+  transform: translateX(-50%) !important;
+
+  background: url("assets/gs-bow-glitter.png") center/contain no-repeat !important;
+
+  z-index: 999 !important;
+  pointer-events: none !important;
+
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,.22))
+    drop-shadow(0 0 26px rgba(255,60,80,.55)) !important;
+}
+
+/* ✅ Kill lid animation completely (even if other rules try to override) */
+.gen-lid,
+.gen-body .gen-lid,
+.generator .gen-lid,
+.gen-lid.open,
+.gen-lid.is-open,
+.lid,
+.generator .lid{
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
   </style>
 </head>
 <body>
@@ -819,6 +896,7 @@
   </div>
 </body>
 </html>
+
 
 
 
