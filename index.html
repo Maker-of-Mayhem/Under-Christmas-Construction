@@ -622,23 +622,31 @@
     drop-shadow(0 0 26px rgba(255,60,80,.55));
 }
 
-/* 🎄 Tree */
+/* 🎄 Tree: beside + slightly behind generator */
 .energy-tree{
   position:absolute;
-  right:-40px;
-  bottom:-12px;
-  width:340px;
-  height:440px;
-  background:url("assets/xmas-tree.png") right bottom/contain no-repeat;
+
+  /* move it up and to the right */
+  right: -10px;
+  bottom: 70px;
+
+  width: 320px;
+  height: 420px;
+
+  background: url("assets/xmas-tree.png") center / contain no-repeat;
+
+  /* behind generator, above ground */
+  z-index: 2;
+
   pointer-events:none;
-  z-index: 1;
   opacity:.98;
   filter:
     drop-shadow(0 0 14px rgba(255,255,255,.30))
     drop-shadow(0 0 30px rgba(120,220,255,.35));
+
+  /* If the tree has dark edges, uncomment: */
   /* mix-blend-mode: screen; */
 }
-
   </style>
 </head>
 <body>
@@ -801,6 +809,7 @@
   </div>
 </body>
 </html>
+
 
 
 
