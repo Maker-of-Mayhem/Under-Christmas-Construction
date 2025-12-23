@@ -760,6 +760,39 @@
   from{ opacity: 0; transform: translateX(-50%) translateY(-6px); }
   to  { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
+  /* 🎄 Merry Christmas (BIG, Emerald, Fade-in) — FINAL OVERRIDE */
+.scene .christmas-title{
+  position: absolute !important;
+  top: 18px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  z-index: 9999 !important;
+  pointer-events: none !important;
+
+  /* Big + Christmas-y */
+  font-family: "Great Vibes", "Brush Script MT", "Segoe Script", cursive !important;
+  font-size: clamp(44px, 6vw, 82px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px !important;
+
+  /* Emerald */
+  color: #0f6f3d !important;
+
+  /* Fade in */
+  opacity: 0 !important;
+  animation: xmasTitleFade 2.2s ease-out 0.6s forwards !important;
+
+  text-shadow:
+    0 0 10px rgba(15,111,61,0.40),
+    0 0 26px rgba(15,111,61,0.24),
+    0 10px 28px rgba(0,0,0,0.35) !important;
+}
+
+@keyframes xmasTitleFade{
+  from{ opacity: 0; transform: translateX(-50%) translateY(-10px); filter: blur(1px); }
+  to  { opacity: 1; transform: translateX(-50%) translateY(0);     filter: blur(0); }
+}
   </style>
 </head>
 <body>
@@ -926,6 +959,7 @@
   </div>
 </body>
 </html>
+
 
 
 
