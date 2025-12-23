@@ -728,7 +728,38 @@
 
   transition: none !important;
   transform: none !important;
-}    
+}  
+  /* 🎄 Merry Christmas INSIDE the scene (top overlay) */
+.scene{ position: relative; }
+
+.scene .christmas-title{
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 999;
+  pointer-events: none;
+
+  font-family: "Great Vibes", "Brush Script MT", cursive;
+  font-size: clamp(34px, 4.6vw, 56px);
+  font-weight: 400;
+
+  color: #0f6f3d !important;
+  opacity: 0;
+
+  text-shadow:
+    0 0 10px rgba(15,111,61,0.35),
+    0 0 22px rgba(15,111,61,0.22);
+
+  animation: christmasFadeIn 2.2s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes christmasFadeIn{
+  from{ opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to  { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
   </style>
 </head>
 <body>
@@ -895,6 +926,7 @@
   </div>
 </body>
 </html>
+
 
 
 
